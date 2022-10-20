@@ -1,0 +1,31 @@
+{
+  "name": "taxysysv2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon run app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P4na/taxySysV2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/P4na/taxySysV2/issues"
+  },
+  "homepage": "https://github.com/P4na/taxySysV2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
