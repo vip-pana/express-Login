@@ -11,3 +11,8 @@
 6) Sviluppare le RestAPI
 7) Testare il tutto
 8) Attivare il midleware per autenticazione attraverso JWT/BEARER
+
+
+proviamo crud da nodejs
+
+creato insert, mancano le altre parti

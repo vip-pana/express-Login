@@ -37,4 +37,4 @@ app.use('/', dashboardRouter)
 /** 404 page */
 app.use((req, res, next)=> {res.render('404')})
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`taxy system listening on port ${port}!`))
