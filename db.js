@@ -22,28 +22,12 @@ function db_connection(){
 })
 }
 
-
-function saveUser(name, surname, email, password, cf) {
-    db_connection()
-    pool.query(`INSERT INTO taxysys.user(name, surname, email, password, cf) 
-    VALUES ('${name}','${surname}','${email}','${password}','${cf}');`,
-    (err, res)=>{
-        if(!err){
-            console.log("query completed")
-        }else{
-            console.log(err.message)
-        }
-    })
-    pool.end;
-}
-
-
-pool.query(`SELECT * FROM taxysys.user;`, (err, res)=>{
+/* pool.query(`SELECT * FROM taxysys.user;`, (err, res)=>{
     if(!err){
         console.log(res.rows)
     } else {
         console.log(err.message)
     }
-}) 
+})  */
 
-module.exports = {pool, db_connection, saveUser} 
+module.exports = {pool, db_connection} 
