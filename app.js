@@ -13,8 +13,6 @@ const expressLayouts = require("express-ejs-layouts")
 app.use(expressLayouts)
 app.set("view engine", "ejs")
 
-/** set database */
-const db = require("./db")
 
 /**get Routers */
 var homeRouter = require("./routes/homepage")
@@ -39,6 +37,4 @@ app.use((req, res, next)=> {res.render('404')})
 
 app.listen(port, () => {
     console.log(`taxy system listening on port ${port}!`)
-    db.db_connection()
-    db.pool.end()
 })

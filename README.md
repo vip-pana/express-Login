@@ -16,3 +16,5 @@
 proviamo crud da nodejs
 
 creato insert, mancano le altre parti
+
+metti UNIQUE alla colonna email

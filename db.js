@@ -3,6 +3,7 @@ require('dotenv').config()
 
 /**insert data for db */
 const Pool = require('pg').Pool
+
 const pool = new Pool({
     user:process.env.USERNAME_DB,
     host:process.env.HOST,

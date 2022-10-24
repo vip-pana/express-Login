@@ -1,17 +1,24 @@
 var express = require('express');
-var db = require('../crud/create')
+var create = require('../crud/create')
 var router = express.Router();
+
+/** bcrypt is for encrypt password */
+var bcrypt = require('bcrypt') 
 
 /** GET homepage */
 router.get('/signup', (req, res)=>{
     res.render('signup')
 })
 
-router.post('/signup/post', (req,res)=>{
-    db.saveUser(
-        req.body.name, req.body.surname, req.body.email, req.body.password, req.body.cf
-    )
-    res.sendStatus(200)
+router.post('/signup/post', async(req,res)=>{
+    try {
+         hashedPassword = await bcrypt.hash(req.body.password, 10)
+         create.saveUser(req.body.name, req.body.surname, req.body.email, hashedPassword, req.body.cf)
+         res.redirect('/dashboard')
+    } catch (error) {
+        console.log(error)
+        res.sendStatus(400)
+    }
 })
 
 module.exports = router

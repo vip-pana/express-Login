@@ -1,8 +1,9 @@
 db = require('../db')
 
+
 function saveUser(name, surname, email, password, cf) {
     db.db_connection()
-    pool.query(`INSERT INTO taxysys.user(name, surname, email, password, cf) 
+    db.pool.query(`INSERT INTO taxysys.user(name, surname, email, password, cf) 
     VALUES ('${name}','${surname}','${email}','${password}','${cf}');`,
     (err, res)=>{
         if(!err){
@@ -11,7 +12,7 @@ function saveUser(name, surname, email, password, cf) {
             console.log(err.message)
         }
     })
-    pool.end;
+    db.pool.end;
 }
 
-module.exports = saveUser
+module.exports = {saveUser}
