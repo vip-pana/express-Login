@@ -1,15 +1,19 @@
 db = require('../db')
-var bcrypt = require('bcrypt') 
+sha1 = require('sha1')
 
+/** works for login, ch.emaileck if a user exist, then check password  */
 function checkUser(email, password){
     db.db_connection()
-    db.pool.query(`SELECT * FROM taxysys.user WHERE email = '${email}';`,
+    db.pool.query(`SELECT * FROM taxysys.user 
+                   WHERE email = '${email}';`,
     (err, res)=>{
         if (!err){
             if(email == res.rows[0].email){
-                console.log('email corretta')
-                
-                console.log(res.rows[0].password)
+                hashedPassword = sha1(password)
+                if (hashedPassword == res.rows[0].password){
+                    console.log('password corretta')
+                    return true
+                }
             } else {
                 console.log('email sbagliata')
             }
@@ -17,10 +21,6 @@ function checkUser(email, password){
             console.log(err) 
         }
     })
-}
-
-async function hashPassword(password) {
-hashedPassword = await bcrypt.hash(password, 10)
 }
 
 module.exports = {checkUser}

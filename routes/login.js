@@ -9,8 +9,11 @@ router.get('/login', (req, res)=>{
 
 /* per ora entra a prescindere di tutto */
 router.post('/login/post', (req, res)=>{
-    read.checkUser(req.body.email, req.body.password)
+    let userExist = read.checkUser(req.body.email, req.body.password)
+    console.log(read.checkUser(req.body.email, req.body.password).checkUser)
+    
+
     res.sendStatus(200)
 })
 
-module.exports = router
+module.exports = router 

@@ -1,6 +1,6 @@
 db = require('../db')
 
-
+/** works with signup of a new user */
 function saveUser(name, surname, email, password, cf) {
     db.db_connection()
     db.pool.query(`INSERT INTO taxysys.user(name, surname, email, password, cf) 

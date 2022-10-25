@@ -10,11 +10,12 @@
 5) Disegnare/Configurare database su Mongo
 6) Sviluppare le RestAPI
 7) Testare il tutto
-8) Attivare il midleware per autenticazione attraverso JWT/BEARER
+8) Attivare il middleware per autenticazione attraverso JWT/BEARER
 
 
-proviamo crud da nodejs
+check password funziona, devo returnare un ris per mandare l'id che deve prendere per il redirect
 
-creato insert, mancano le altre parti
 
-metti UNIQUE alla colonna email
+come mai non returna checkuser?
+cosa serve il middleware?
+admin js?
