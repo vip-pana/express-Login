@@ -1,17 +1,17 @@
 <div class="container">
     <h1>Login</h1>
 
-    <ul>
-        <% if(messages.success_msg) { %>
-            <li> <%= messages.success_msg %> </li>
+        <% if(messages.success_msg) { %>  
+            <div class="alert alert-danger" role="alert">
+                <%= messages.success_msg %> 
+            </div>
         <% } %>
-    </ul>
 
-    <ul>
         <% if(messages.error) { %>
-            <li> <%= messages.error %> </li>
+            <div class="alert alert-danger" role="alert">
+                <%= messages.error %> 
+            </div>
         <% } %>
-    </ul>
 
     <!-- form login go post-->
     <form action="/login" method="post">
