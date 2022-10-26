@@ -17,3 +17,4 @@ funziona tutto, ma non ho capito ancora bene a cosa serve passport, e perché bc
 come funziona e cosa è passport?
 come funziona bene bcrypt?
 TODO: fare pannello admin js
+fare un bell'aspetto con EJS

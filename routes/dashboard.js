@@ -5,8 +5,9 @@ var router = express.Router();
 const { checkNoAuthenticated } = require('../middlewares')
 
 /** GET homepage */
+
 router.get('/dashboard', checkNoAuthenticated ,(req, res)=>{
-    res.render('dashboard')
+    res.render('dashboard', {user: req.user.nickname})
 })
 
 module.exports = router
