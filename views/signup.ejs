@@ -1,13 +1,15 @@
 <div class="container">
 <h1>Sign up</h1>
 
-<ul>
+
     <% if(typeof errors != 'undefined') { %>
         <% errors.forEach(error=>{ %>
-            <li> <%= error.message %> </li>
+        <div class="alert alert-danger" role="alert">
+            <%= error.message %> 
+        </div>
         <% }) %>
     <% } %>
-</ul>
+
 
 <!-- signup form -->
 <form action="/signup" method="POST">
