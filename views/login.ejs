@@ -1,7 +1,20 @@
 <div class="container">
     <h1>Login</h1>
+
+    <ul>
+        <% if(messages.success_msg) { %>
+            <li> <%= messages.success_msg %> </li>
+        <% } %>
+    </ul>
+
+    <ul>
+        <% if(messages.error) { %>
+            <li> <%= messages.error %> </li>
+        <% } %>
+    </ul>
+
     <!-- form login go post-->
-    <form action="/login/post" method="post">
+    <form action="/login" method="post">
         <!-- email input -->
         <div class="mb-3">
             <label for="emailInput" class="form-label">Email</label>

@@ -1,19 +1,20 @@
 var express = require('express');
+const passport = require('passport');
 var router = express.Router();
-var read = require('../crud/read')
+
+// import middleware
+const { checkAuthenticated } = require('../middlewares')
 
 /** GET homepage */
-router.get('/login', (req, res)=>{
+router.get('/login', checkAuthenticated, (req, res)=>{
     res.render('login')
 })
 
-/* per ora entra a prescindere di tutto */
-router.post('/login/post', (req, res)=>{
-    let userExist = read.checkUser(req.body.email, req.body.password)
-    console.log(read.checkUser(req.body.email, req.body.password).checkUser)
-    
+/* utilizzato authenticate di passport */
+router.post('/login', passport.authenticate('local', {
+    successRedirect: "/dashboard",
+    failureRedirect: "/login",
+    failureFlash: true
+}))
 
-    res.sendStatus(200)
-})
-
-module.exports = router 
+module.exports = router

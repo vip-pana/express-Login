@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/** GET homepage */
-router.get('/dashboard', (req, res)=>{
-    res.render('dashboard')
-})
+// import middleware
+const { checkNoAuthenticated } = require('../middlewares')
 
-router.get('/dashboard/:id', (req, res)=>{
+/** GET homepage */
+router.get('/dashboard', checkNoAuthenticated ,(req, res)=>{
     res.render('dashboard')
 })
 

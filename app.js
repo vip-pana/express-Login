@@ -1,18 +1,38 @@
 /** START THE APP */
 const express = require('express')
-const app = express()
-const port = 3000
+const session = require('express-session')
+const flash = require('express-flash')
 
-/** set body-parser for use post */
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
+const { pool } = require('./db')
+const bcrypt = require('bcrypt')
+const passport = require('passport')
+const initializePassport = require('./passportConfig')
+
+initializePassport(passport)
+
+const app = express()
+const PORT = 3000
+
+/* I USE EXPRESS FOR POST REQUEST*/
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 /** set the view engine */
 const expressLayouts = require("express-ejs-layouts")
 app.use(expressLayouts)
 app.set("view engine", "ejs")
 
+/**this is for gestire le sessions */
+app.use(session({
+    secret:'secret',
+    resave: false,
+    saveUninitialized: false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use(flash())
 
 /**get Routers */
 var homeRouter = require("./routes/homepage")
@@ -35,6 +55,6 @@ app.use('/', dashboardRouter)
 /** 404 page */
 app.use((req, res, next)=> {res.render('404')})
 
-app.listen(port, () => {
-    console.log(`taxy system listening on port ${port}!`)
+app.listen(PORT, () => {
+    console.log(`taxy system listening on port ${PORT}!`)
 })

@@ -12,10 +12,8 @@
 7) Testare il tutto
 8) Attivare il middleware per autenticazione attraverso JWT/BEARER
 
+funziona tutto, ma non ho capito ancora bene a cosa serve passport, e perché bcrypt funziona ma solo con il compare e comunque in una maniera non comune
 
-check password funziona, devo returnare un ris per mandare l'id che deve prendere per il redirect
-
-
-come mai non returna checkuser?
-cosa serve il middleware?
-admin js?
+come funziona e cosa è passport?
+come funziona bene bcrypt?
+TODO: fare pannello admin js
