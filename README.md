@@ -1,13 +1,9 @@
 # taxySysV2
 
-// non ho installato solo mongose dalle libs
+## Important
+In order to use this application, you must have a .env file that contains your database information.
 
+## Description
+è una applicazione Express in cui ci si interfaccia a ElephantDB, e si può eseguire il login e utilizzare la dashboard
 
-1) Creare progetto node/express
-2) Creare pagine sito
-3) Creare SignIn/SignOn
-4) Disegnare il database su postgresql (Usando PgAdmin)
-5) Disegnare/Configurare database su Mongo
-6) Sviluppare le RestAPI
-7) Testare il tutto
-8) Attivare il midleware per autenticazione attraverso JWT/BEARER
+This application is built using Express and allows users to interface with ElephantDB for make a login. With this app, you can log in and use the dashboard to manage your database.
